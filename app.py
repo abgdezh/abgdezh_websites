@@ -10,5 +10,14 @@ def main_page():
 def health_check():
     return jsonify({"status": "OK"})
 
+@app.route('/notes', methods=['GET'])
+def get_notes():
+    return jsonify(
+        [
+            {"id": 1, "body": "Note 1"},
+            {"id": 2, "body": "Note 2"}
+        ]
+    )
+
 if __name__ == '__main__':
     app.run(port=8080)
