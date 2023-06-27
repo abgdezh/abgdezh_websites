@@ -4,5 +4,7 @@ build:
   commands:
     build:
       - pip install -r requirements.txt
+    post-build:
+      - python app.py
 run: 
   command: gunicorn app:app -w 5
